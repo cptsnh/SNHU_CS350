@@ -15,11 +15,8 @@ I could have improved on bit manipulation to improve efficiency. For example, in
 Something we learn in embedded systems is the use of header files and that we need to rely on them for implementation details to be successful. I learned more by reading documentation in manufacturer header files than from any other source. Texas Instruments (TI) has a good support forum where customers can ask questions. I think this is big consideration for the future if I need to research and/or purchase something for my company.
 
 ### What skills from this project will be particularly transferable to other projects and/or course work?
-
+There are several transferable skills that I learned in this course. First, one of the key things we learned in the course is how embedded systems use timers. This is extremely close to the "bare metal", and is analogous to how we use threading in high-level languages. Understanding how it is done in embedded programming prepares us for more efficient programming. Second, the use of bit manipulators can lead to much more efficient programs as well. Our Zybook provided great lessons on how to use bit manipulation, which I will use in the future.
 
 ### How did you make this project maintainable, readable, and adaptable?
-
-
-
-
-
+The primary way that we made this project maintainable, readable, and adaptable is by implementing the cooperative task scheduler to manage the three main tasks. We could have implemented this project by micromanaging tasks individually in the main code loop, however this type of solution leads to "spaghetti code". It would be extremely difficult to maintain, troubleshoot, and understand as the code base matures.  
+By implementing a cooperative task scheduler, our code is organized based on the three main tasks. In each task, we set up the timers and control variables. The scheduler is configured to "tick" based on the GCD period of all three timers. In this implementation, managing the three tasks is clear, organized, and demonstrates a system that can scale to as many tasks as we need in the future.
