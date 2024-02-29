@@ -19,4 +19,5 @@ There are several transferable skills that I learned in this course. First, one 
 
 ### How did you make this project maintainable, readable, and adaptable?
 The primary way that we made this project maintainable, readable, and adaptable is by implementing the cooperative task scheduler to manage the three main tasks. We could have implemented this project by micromanaging tasks individually in the main code loop, however this type of solution leads to "spaghetti code". It would be extremely difficult to maintain, troubleshoot, and understand as the code base matures.  
+  
 By implementing a cooperative task scheduler, our code is organized based on the three main tasks. In each task, we set up the timers and control variables. The scheduler is configured to "tick" based on the GCD period of all three timers. In this implementation, managing the three tasks is clear, organized, and demonstrates a system that can scale to as many tasks as we need in the future.
